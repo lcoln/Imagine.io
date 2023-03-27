@@ -1,38 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Header from '../layouts/Header.astro';
+// import Me from '../components/me';
+import 'css-doodle';
+import Me from '../assets/me.jpeg'
+
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+	<Header />
+	<div class="w-full h-full font-light text-slate-200">
+		<div class="w-full h-full bg-cover bg-center bg-[url('/ai/1.png')]"></div>
+		<div class="absolute left-0 top-0 right-0 bottom-0 w-full h-full bg-black opacity-50"></div>
+		<div class="flex absolute left-0 top-0 right-0 bottom-0 w-[800px] h-[300px] m-auto justify-center">
+			<div class="
+				relative
+				flex
+				rounded-full
+			">
+				<img src={Me} alt="" rounded-full class="shadow-[0_0_5px_0_#999]"/>
+			</div>
+			<div flex flex-col ml-6 justify-center>
+				<span text-4xl>林腾</span>
+				<span mt-2 text-2xl>一个兴趣使然的web工程师</span>
+				<span mt-6 text-base>探索的道路，永无止境</span>
+			</div>
+		</div>
+	</div>
 </Layout>
 
 <style>
@@ -78,4 +72,15 @@ import Card from '../components/Card.astro';
 		gap: 1rem;
 		padding: 0;
 	}
+	css-doodle {
+    --rule: (
+      @grid: 5 / 8em;
+      --d: @p(45deg, -45deg, 135deg, -135deg);
+      --lg: linear-gradient(@var(--d),#60569e 50%,#0000 0);
+      background:
+        @var(--lg) 0 0 / 100% 100%,
+        @var(--lg) 0 0 / 50% 50%;
+    );
+  }
+
 </style>

@@ -1,4 +1,5 @@
 ---
+import 'css-doodle';
 export interface Props {
 	title: string;
 }
@@ -7,7 +8,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" w-full h-full>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +16,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body w-full h-full>
 		<slot />
 	</body>
 </html>

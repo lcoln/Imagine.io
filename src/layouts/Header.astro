@@ -1,0 +1,34 @@
+---
+console.log(Astro.url.pathname, 12221)
+const routes = [{
+  name: 'Home', 
+  pathname: '/'
+}, {
+  name: 'Tools',
+  pathname: '/tools'
+}, {
+  name: 'Article',
+  pathname: '/article'
+},{
+  name: 'Music',
+  pathname: '/mrticle'
+}]
+---
+
+<header fixed top-0 left-0 flex justify-between w-full py-4 px-20 font-extralight text-slate-300 z-50 tracking-widest transition>
+  <div text-2xl>Rick's site</div>
+  <div flex space-x-10>
+    {
+      routes.map(v => <a 
+        href={v.pathname} 
+        class={
+          Astro.url.pathname === v.pathname 
+            ? 'text-white hover:text-white' 
+            : 'hover:text-white'
+        }
+      >
+        {v.name}
+      </a>)
+    }
+  </div>
+</header>

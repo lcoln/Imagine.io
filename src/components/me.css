@@ -1,0 +1,29 @@
+
+	css-doodle {
+    --rule: (
+      /* @grid: 1 / 1 14em;
+      background-size: 100%;
+      background-image: @svg(
+        viewBox: 0 0 100 175;
+        @M50(path {
+          stroke-width: @r.5;
+          stroke: @p(#60569e, #e6437d);
+          d: M0 0 L@r100 @r175;
+        });
+      ); */
+      /* background: url("../assets/me.jpeg"); */
+      :doodle {
+        @svg-filter(f1) {
+          feColorMatrix(type: matrix, values: "0 1 0 0 1, 0 1 0 0 1, 0 1 0 0 1, 0 0 0 1 0");
+        }
+      }
+      
+      @size: 200px;
+      @place-cell: center;
+      @svg(f1) {
+        background-color: #333;
+      }
+      
+      
+    );
+  }
